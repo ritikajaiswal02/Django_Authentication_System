@@ -1,0 +1,19 @@
+{% load static %}
+<html>
+<head>
+<title>Auth App by Kamal sir</title>
+<link rel="stylesheet" href="{% static 'css/mystyle.css' %}"></link>
+</head>
+<body>
+	<div class="nav">
+	{% if user.is_authenticated %}
+	<a href="{% url 'ulogout' %}">Logout</a>
+	{% else %}
+	<a href="{% url 'usignup' %}"> SignUp </a>
+	<a href="{% url 'ulogin' %}"> Login </a>
+	{% endif %}
+	</div>
+	{% block content %}
+	{% endblock %}
+</body>
+</html>
